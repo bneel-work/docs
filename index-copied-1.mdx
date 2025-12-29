@@ -1,56 +1,34 @@
 ---
-title: "ObserveX Core Concepts"
-description: "Welcome to the new home for your documentation"
+title: "Introduction"
+description: "Modern infrastructure doesn't fail in simple ways. A single user request might touch an API gateway, authentication service, three microservices, two databases, a cache, a message queue, and an external payment provider—all within 200 milliseconds. When something goes wrong, the failure point could be anywhere in that chain. Traditional monitoring tools force you to check each system separately, mentally correlating timestamps across disconnected dashboards while your users wait."
 ---
 
-## Setting up
+ObserveX exists to eliminate that context-switching tax.
 
-Get your documentation site up and running in minutes.
+We built ObserveX on a simple premise: observability data is only useful when it's connected. A CPU spike means nothing in isolation. A database slow query means nothing without knowing which service triggered it. An error log means nothing without the trace showing the complete request path. ObserveX connects all of these automatically—every metric, every log, every trace is anchored to the infrastructure that produced it, and that infrastructure is mapped in a relationship graph you can traverse in real time.
 
-<Card title="Start here" icon="rocket" horizontal href="/quickstart">
-  Follow our three step quickstart guide.
-</Card>
+The result: when something breaks, you don't hunt. You follow a connected path from alert to root cause.
 
-## Make it yours
+---
 
-Design a docs site that looks great and empowers your users.
+## Who ObserveX Is For
 
-<Columns cols={2}>
-  <Card title="Edit locally" icon="pen-to-square" href="/development">
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card title="Customize your site" icon="palette" href="/essentials/settings">
-    Customize the design and colors of your site to match your brand.
-  </Card>
-  <Card title="Set up navigation" icon="map" href="/essentials/navigation">
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card title="API documentation" icon="terminal" href="/api-reference/introduction">
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
+**Platform Engineering Teams** building and maintaining the infrastructure that development teams deploy to. You need visibility across Kubernetes clusters, cloud resources, databases, and networking—without stitching together six different tools.
 
-## Create beautiful pages
+**Site Reliability Engineers** responsible for uptime, latency, and incident response. You need to move from alert to root cause in minutes, not hours. You need correlation that actually works, not dashboards that require tribal knowledge to interpret.
 
-Everything you need to create world-class documentation.
+**DevOps Engineers** managing CI/CD pipelines, deployment infrastructure, and the bridge between development and production. You need to see how deployments affect system behavior and catch regressions before users do.
 
-<Columns cols={2}>
-  <Card title="Write with MDX" icon="pen-fancy" href="/essentials/markdown">
-    Use MDX to style your docs pages.
-  </Card>
-  <Card title="Code samples" icon="code" href="/essentials/code">
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card title="Images" icon="image" href="/essentials/images">
-    Display images and other media.
-  </Card>
-  <Card title="Reusable snippets" icon="recycle" href="/essentials/reusable-snippets">
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+**Backend Developers** who own services in production. You need traces that show exactly where your code is slow, logs that have the context you need to debug, and metrics that tell you if your last deploy made things better or worse.
 
-## Need inspiration?
+---
 
-<Card title="See complete examples" icon="stars" href="https://mintlify.com/customers">
-  Browse our showcase of exceptional documentation sites.
-</Card>
+## What Makes ObserveX Different
+
+**Unified Entity Model** — Everything you monitor—VMs, containers, databases, services, routers—is a first-class entity with identity, metadata, and relationships. Signals attach to entities, not just labels. When you query, you're traversing a graph of connected infrastructure, not searching disconnected data stores.
+
+**Automatic Correlation** — Traces link to logs via trace IDs. Logs link to metrics via entity binding. Metrics link to infrastructure via the relationship graph. When you investigate an incident, ObserveX has already connected the dots.
+
+**Single Query Language** — One query syntax works across metrics, logs, and traces. Filter by entity, time, attributes, or relationships. No switching mental models between Prometheus queries, log search syntax, and trace filters.
+
+**Horizontal Scale** — Ingest billions of data points per day. Store years of history with intelligent tiering. Query recent data in milliseconds. The architecture scales with your infrastructure, not against it.

@@ -30,8 +30,8 @@
       {
         "tab": "ObserveX",
         "pages": [
-          "observe-x/core-concepts",
           "index-copied-1",
+          "observe-x/core-concepts",
           {
             "group": "Getting started",
             "pages": [
