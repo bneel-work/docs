@@ -1,0 +1,53 @@
+---
+title: "Core Concepts"
+description: "ObserveX is built on four core concepts that form the backbone of the entire platform. Everything else dashboards, alerts, correlation, root cause analysis is built on top of these primitives."
+---
+
+![Core](/docs_images/Core.png)
+
+## 1. MONITOR
+
+A **Monitor** is any entity in your infrastructure that ObserveX watches. It's the "thing" being observed—could be physical hardware, virtual resources, software services, or logical constructs.
+
+## 2. METRIC
+
+A **Metric** is a numerical measurement captured at regular intervals. Metrics answer quantitative questions: how much, how many, how fast, what percentage.
+
+## 3. LOG
+
+A **Log** is a discrete event that occurred at a specific moment. Logs capture context that metrics cannot: error messages, stack traces, user IDs, request payloads, and arbitrary structured data.
+
+## 4. TRACE
+
+A **Trace** follows a single request as it travels across service boundaries. It reconstructs the complete journey from entry point through all downstream calls, showing exactly where time is spent and where failures occur.
+
+### Trace Use Cases
+
+| Question                                   | How Trace Answers It                                |
+| :----------------------------------------- | :-------------------------------------------------- |
+| Why is this endpoint slow?                 | Trace shows time breakdown per service/operation    |
+| Where did the error originate?             | Error status propagates up span tree with source    |
+| Which services handle this request?        | Trace maps complete service dependency path         |
+| Is the database the bottleneck?            | Database spans show query timing relative to total  |
+| What's the impact of this slow dependency? | Trace shows all requests waiting on that dependency |
+
+## How They Connect
+
+![How Connected](/docs_images/How_Connected.png)
+
+## Quick Reference
+
+| Concept     | Definition                      | Key Properties                        |
+| :---------- | :------------------------------ | :------------------------------------ |
+| **Monitor** | The thing being observed        | Type, State, Metadata, Relationships  |
+| **Metric**  | Numerical measurement over time | Name, Type, Value, Labels, Timestamp  |
+| **Log**     | Discrete event with context     | Timestamp, Level, Message, Attributes |
+| **Trace**   | Request journey across services | Trace ID, Spans, Duration, Status     |
+
+| Signal     | Best For                        | Query Example                          |
+| :--------- | :------------------------------ | :------------------------------------- |
+| **Metric** | Trends, alerting, dashboards    | "P99 latency over last hour"           |
+| **Log**    | Debugging, audit, context       | "All errors containing order_id=12345" |
+| **Trace**  | Request flow, latency breakdown | "Show all spans for trace abc123"      |
+
+_These four concepts—Monitor, Metric, Log, Trace—are the atoms from which all observability is built._
